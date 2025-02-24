@@ -5,3 +5,6 @@ queso
 jamón
 pollo
 pan
+salsa de tartara
+salsa de mayonesa
+salsa de tomate
