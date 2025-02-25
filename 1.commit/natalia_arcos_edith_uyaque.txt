@@ -1,0 +1,101 @@
+Ejercicio 1
+1.1. Preguntas
+
+1¿Cómo se inicializa un repositorio local? (que comando se debe ejecutar?)
+
+Un repositorio local se inicializa con el comando git init
+
+2¿Cómo hago para que un directorio deje de ser controlado por git? (que comando se debe ejecutar?)
+  
+  con el comando rm -rf .git 
+3.Si agrego un archivo a un directorio que ya está siendo controlado por git, ¿está siendo controlado por git?
+  No automáticamente, debe ser agregado con el comando git add nombre_archivo  
+
+4.¿Qué comando se utiliza para agregar un archivo al repositorio local?
+   se utiliza el comando git add para agregar a el staging área y luego git commit para enviar al repositorio local.
+
+5.¿Cómo determino que archivos fueron modificados? (que comando se debe ejecutar?)
+  utilizamos el comando git status.
+
+6.¿Qué comando se utiliza para hacer un commit?
+  se utiliza el  comando git commit -m "mensaje"
+
+7.En sus propias palabras, ¿qué es un commit?
+   un commit es un historial o registro de los cambios que se realizan a un archivo dentro de un repositorio. 
+
+Ejercicio practico 1.2
+3.
+NATALIA DELGADO@Nata-26 MINGW64 ~/Desktop/tallergit/1.commit (natalia_arcos_edith_uyaque)
+$ git status
+On branch natalia_arcos_edith_uyaque
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sandwich.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        natalia_arcos_edith_uyaque.txt
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+explicacion : 
+podemos observar en la salida que se ha modificado el archivo  sandwich.txt pero aun no esta en staging area
+debido a que no hemos ejecutado el comando git add sandwich.txt,asi que aunque hagamos un commit este no se guardara en el repositorio.
+y tambien nos indica que tampoco se encuentra en staging area el archivo  natalia_arcos_edith_uyaque.txt por lo cual tampoco se guardara en el repositorio.
+5.
+explicacion :
+esto nos indica que el archivo sandwich.txt  ya se encuentra en staging area listos para pasar al repositorio con el comando git commit,ademas sigue
+el mensaje donde nos indica que el archivo   natalia_arcos_edith_uyaque.txt aun se encuentra en el estado anterior en el working directory.
+7.
+explicacion :
+Ya no se encuentra en la salida el archivo sandwich.txt, ya que no se ha realizo ninguna modificacion nueva, y ya se envió con el comando git commit -m
+al repositorio, ,ademas sigue el mensaje donde nos indica que el archivo   natalia_arcos_edith_uyaque.txt aun se encuentra en el estado anterior en el working directory.
+9.
+NATALIA DELGADO@Nata-26 MINGW64 ~/Desktop/tallergit/1.commit (natalia_arcos_edith_uyaque)
+$ git log
+commit 8f79e16f202e05424b1db2b78f9de26877641155 (HEAD -> natalia_arcos_edith_uyaque)
+Author: natalia arcos, edith uyaque <narcos21B@udenar.edu.co>
+Date:   Mon Feb 24 17:46:54 2025 -0500
+
+    Agrego salsas
+
+commit 35a5fccdf7a733b741ed6d5e905d0c6e35351ff4
+Author: natalia arcos, edith uyaque <narcos21B@udenar.edu.co>
+Date:   Mon Feb 24 17:21:04 2025 -0500
+
+    Agrego mi sandwich.txt
+
+commit fafdc7f0bd9a9a556a616c14ff783605909f3803 (origin/practica2025, origin/main, origin/HEAD, practica2025, main)
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:45:03 2025 -0500
+
+    cambio readme.md
+
+commit 5d6dc694d95afb33114a820339acfeeab38cc42a
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:39:56 2025 -0500
+explciacion:  
+este comando lista los commits realizados, se organizan desde el mas reciente al mas antiguo.
+ 
+10.1 
+con el comando git log --oneline se observan los commits relaizados en una sola linea,
+10.2
+muestra los archivos modificados, y cuantas lineas cambiaron en cada commit. 
+11.
+git diff nos indica las diferencias entre los archivos que aun no estan en el staging area.
+en nuestro caso no observamos nada en la saldia por que no tenemos archivos en el staging area sino en el repositorio,
+11.1
+nos muestra las diferencias que hay entre los diferentes commits realizados
+11.2
+nos indica un comparador gráfico ,donde podemos observar y analizar visualmente las diferencias entre los archivos en distintas versiones.
+14. 
+con git log --oneline se observa los ultimos commits de agregar sandwich2.txt y el de renombrarlo, con git status solo  nos indica que el archivo
+   natalia_arcos_edith_uyaque.txt aun se encuentra en el estado anterior en el working directory.
+15.
+con git log --oneline se observa el ultimo commit de eliminar el archivo sandwich2_feo.txt, con git status solo  nos indica que el archivo
+   natalia_arcos_edith_uyaque.txt aun se encuentra en el estado anterior en el working directory.
+16.
+Al crear y agregar el archivo sandwich2_txt al repositorio se observa que se añaden 7 lineas nuevas al archivo,al renombrarlo como 
+sandwich2_feo.txt el archivo cambia de nombre, y no hubieorn modificaciones en el contenido por lo cual mestra 0 insertions y 0 deletions, 
+y al final al eliminar el archivo sandwich2_feo.txt. se muestran 7 lineas en rojo y se indica que ya no esta en el repositorio.
